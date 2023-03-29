@@ -1,0 +1,85 @@
+.stButton{
+    display:  flex;
+    justify-content: center;
+}
+
+div.css-1ec096l > table{
+font-family: Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+}
+
+div.css-1ec096l > table td, div.css-1ec096l > table th {
+border: 1px solid #ddd;
+padding: 8px;
+
+}
+
+table th:nth-child(1){
+   display:none;
+}
+
+div.css-1ec096l > table tr:hover {background-color:#797d7c;}
+
+div.css-1ec096l > table th {
+padding-top: 1px;
+padding-bottom: 12px;
+text-align: left;
+color: white;
+}
+
+
+.object-key-val{
+    border: white solid 1px;
+    border-radius:2px;
+    padding: 0.70em 1.0em;
+}
+
+div.stButton > button{  
+    padding: 0.70em 1.0em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: royalblue;
+    border: none;
+    display:inline;
+    border-radius: 5px;
+}
+
+.element-container > div.stButton > button:hover,
+.element-container > div.stButton > button:active{  
+    color: #ffffff;
+    background-color: rgb(25, 58, 159);
+}
+
+.element-container:nth-of-type(2) button{
+    background: red;
+}
+
+.element-container:nth-of-type(2) button:active,
+.element-container:nth-of-type(2) button:hover{
+    background: rgb(143, 3, 3);
+    color: #ffffff;
+}
+
+div.css-1djdyxw{
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 200px;
+}
+
+[aria-checked="false"]{
+    display: none; 
+}
+
+.stException,.stAlert{
+    margin-top:-10px;
+    margin-left:-25px;
+    padding: 0.70em 1.5em;
+}
+
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}

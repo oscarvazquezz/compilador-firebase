@@ -1,0 +1,556 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ASIGNAR
+
+Grammar
+
+Rule 0     S' -> expresion
+Rule 1     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+Rule 2     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+Rule 3     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+Rule 4     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+Rule 5     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+Rule 6     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+Rule 7     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+Rule 8     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+Rule 9     expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+Rule 10    expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+Rule 11    expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+Rule 12    expresion -> ENTERO
+
+Terminals, with rules where they appear
+
+ASIGNAR              : 
+COMA                 : 2 3 3 4 7 9 11
+COMILLA              : 1 1 2 2 3 3 4 4 4 4 5 5 5 5 6 6 7 7 8 8 9 9 10 10 11 11
+DECIMAL              : 8 9
+DOBLEPUNTO           : 1 2 3 4 5 6 7 8 9 10 11
+ENTERO               : 6 7 12
+LLADER               : 1 2 3 10 11
+LLAIZQ               : 1 2 3 10 11
+TEXT                 : 1 2 3 4 4 5 5 6 7 8 9 10 11
+error                : 
+
+Nonterminals, with rules where they appear
+
+expresion            : 1 2 2 3 3 3 4 7 9 10 10 11 11 11 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expresion
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 1
+
+state 1
+
+    (0) S' -> expresion .
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    COMILLA         shift and go to state 4
+
+
+state 2
+
+    (1) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> COMILLA . TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+
+    TEXT            shift and go to state 5
+
+
+state 3
+
+    (12) expresion -> ENTERO .
+
+    COMILLA         reduce using rule 12 (expresion -> ENTERO .)
+    $end            reduce using rule 12 (expresion -> ENTERO .)
+    LLADER          reduce using rule 12 (expresion -> ENTERO .)
+    COMA            reduce using rule 12 (expresion -> ENTERO .)
+
+
+state 4
+
+    (10) expresion -> expresion COMILLA . TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion COMILLA . TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    TEXT            shift and go to state 6
+
+
+state 5
+
+    (1) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> COMILLA TEXT . COMILLA DOBLEPUNTO DECIMAL COMA expresion
+
+    COMILLA         shift and go to state 7
+
+
+state 6
+
+    (10) expresion -> expresion COMILLA TEXT . COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion COMILLA TEXT . COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    COMILLA         shift and go to state 8
+
+
+state 7
+
+    (1) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO ENTERO
+    (7) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO DECIMAL
+    (9) expresion -> COMILLA TEXT COMILLA . DOBLEPUNTO DECIMAL COMA expresion
+
+    DOBLEPUNTO      shift and go to state 9
+
+
+state 8
+
+    (10) expresion -> expresion COMILLA TEXT COMILLA . DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion COMILLA TEXT COMILLA . DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    DOBLEPUNTO      shift and go to state 10
+
+
+state 9
+
+    (1) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . LLAIZQ expresion LLADER
+    (2) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . COMILLA TEXT COMILLA
+    (6) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . ENTERO
+    (7) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . ENTERO COMA expresion
+    (8) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . DECIMAL
+    (9) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO . DECIMAL COMA expresion
+
+    LLAIZQ          shift and go to state 12
+    COMILLA         shift and go to state 11
+    ENTERO          shift and go to state 13
+    DECIMAL         shift and go to state 14
+
+
+state 10
+
+    (10) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO . LLAIZQ expresion LLADER
+    (11) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO . LLAIZQ expresion LLADER COMA expresion
+
+    LLAIZQ          shift and go to state 15
+
+
+state 11
+
+    (4) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA . TEXT COMILLA COMA expresion
+    (5) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA . TEXT COMILLA
+
+    TEXT            shift and go to state 16
+
+
+state 12
+
+    (1) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ . expresion LLADER
+    (2) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ . expresion COMA expresion LLADER
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ . expresion COMA expresion COMA expresion LLADER
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 17
+
+state 13
+
+    (6) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO .
+    (7) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO . COMA expresion
+
+  ! shift/reduce conflict for COMA resolved as shift
+    COMILLA         reduce using rule 6 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO .)
+    $end            reduce using rule 6 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO .)
+    LLADER          reduce using rule 6 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO .)
+    COMA            shift and go to state 18
+
+  ! COMA            [ reduce using rule 6 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO .) ]
+
+
+state 14
+
+    (8) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL .
+    (9) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL . COMA expresion
+
+  ! shift/reduce conflict for COMA resolved as shift
+    COMILLA         reduce using rule 8 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL .)
+    $end            reduce using rule 8 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL .)
+    LLADER          reduce using rule 8 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL .)
+    COMA            shift and go to state 19
+
+  ! COMA            [ reduce using rule 8 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL .) ]
+
+
+state 15
+
+    (10) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ . expresion LLADER
+    (11) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ . expresion LLADER COMA expresion
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 20
+
+state 16
+
+    (4) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT . COMILLA COMA expresion
+    (5) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT . COMILLA
+
+    COMILLA         shift and go to state 21
+
+
+state 17
+
+    (1) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion . LLADER
+    (2) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion . COMA expresion LLADER
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion . COMA expresion COMA expresion LLADER
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    LLADER          shift and go to state 22
+    COMA            shift and go to state 23
+    COMILLA         shift and go to state 4
+
+
+state 18
+
+    (7) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA . expresion
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 24
+
+state 19
+
+    (9) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA . expresion
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 25
+
+state 20
+
+    (10) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion . LLADER
+    (11) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion . LLADER COMA expresion
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    LLADER          shift and go to state 26
+    COMILLA         shift and go to state 4
+
+
+state 21
+
+    (4) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA . COMA expresion
+    (5) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA .
+
+  ! shift/reduce conflict for COMA resolved as shift
+    COMA            shift and go to state 27
+    COMILLA         reduce using rule 5 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA .)
+    $end            reduce using rule 5 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA .)
+    LLADER          reduce using rule 5 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA .)
+
+  ! COMA            [ reduce using rule 5 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA .) ]
+
+
+state 22
+
+    (1) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .
+
+    COMILLA         reduce using rule 1 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .)
+    $end            reduce using rule 1 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .)
+    LLADER          reduce using rule 1 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .)
+    COMA            reduce using rule 1 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .)
+
+
+state 23
+
+    (2) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA . expresion LLADER
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA . expresion COMA expresion LLADER
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 28
+
+state 24
+
+    (7) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion .
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    COMILLA         reduce using rule 7 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion .)
+    $end            reduce using rule 7 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion .)
+    LLADER          reduce using rule 7 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion .)
+    COMA            reduce using rule 7 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion .)
+
+  ! COMILLA         [ shift and go to state 4 ]
+
+
+state 25
+
+    (9) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion .
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    COMILLA         reduce using rule 9 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion .)
+    $end            reduce using rule 9 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion .)
+    LLADER          reduce using rule 9 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion .)
+    COMA            reduce using rule 9 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion .)
+
+  ! COMILLA         [ shift and go to state 4 ]
+
+
+state 26
+
+    (10) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .
+    (11) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER . COMA expresion
+
+    COMILLA         reduce using rule 10 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .)
+    $end            reduce using rule 10 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .)
+    LLADER          reduce using rule 10 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .)
+    COMA            shift and go to state 29
+
+  ! COMA            [ reduce using rule 10 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER .) ]
+
+
+state 27
+
+    (4) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA . expresion
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 30
+
+state 28
+
+    (2) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion . LLADER
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion . COMA expresion LLADER
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    LLADER          shift and go to state 32
+    COMA            shift and go to state 31
+    COMILLA         shift and go to state 4
+
+
+state 29
+
+    (11) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA . expresion
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 33
+
+state 30
+
+    (4) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion .
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    COMILLA         reduce using rule 4 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion .)
+    $end            reduce using rule 4 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion .)
+    LLADER          reduce using rule 4 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion .)
+    COMA            reduce using rule 4 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion .)
+
+  ! COMILLA         [ shift and go to state 4 ]
+
+
+state 31
+
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA . expresion LLADER
+    (1) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (2) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER
+    (3) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER
+    (4) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA COMA expresion
+    (5) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO COMILLA TEXT COMILLA
+    (6) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO
+    (7) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO ENTERO COMA expresion
+    (8) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL
+    (9) expresion -> . COMILLA TEXT COMILLA DOBLEPUNTO DECIMAL COMA expresion
+    (10) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> . expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+    (12) expresion -> . ENTERO
+
+    COMILLA         shift and go to state 2
+    ENTERO          shift and go to state 3
+
+    expresion                      shift and go to state 34
+
+state 32
+
+    (2) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER .
+
+    COMILLA         reduce using rule 2 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER .)
+    $end            reduce using rule 2 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER .)
+    LLADER          reduce using rule 2 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER .)
+    COMA            reduce using rule 2 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion LLADER .)
+
+
+state 33
+
+    (11) expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion .
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    COMILLA         reduce using rule 11 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion .)
+    $end            reduce using rule 11 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion .)
+    LLADER          reduce using rule 11 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion .)
+    COMA            reduce using rule 11 (expresion -> expresion COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion .)
+
+  ! COMILLA         [ shift and go to state 4 ]
+
+
+state 34
+
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion . LLADER
+    (10) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER
+    (11) expresion -> expresion . COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion LLADER COMA expresion
+
+    LLADER          shift and go to state 35
+    COMILLA         shift and go to state 4
+
+
+state 35
+
+    (3) expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER .
+
+    COMILLA         reduce using rule 3 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER .)
+    $end            reduce using rule 3 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER .)
+    LLADER          reduce using rule 3 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER .)
+    COMA            reduce using rule 3 (expresion -> COMILLA TEXT COMILLA DOBLEPUNTO LLAIZQ expresion COMA expresion COMA expresion LLADER .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for COMA in state 13 resolved as shift
+WARNING: shift/reduce conflict for COMA in state 14 resolved as shift
+WARNING: shift/reduce conflict for COMA in state 21 resolved as shift
